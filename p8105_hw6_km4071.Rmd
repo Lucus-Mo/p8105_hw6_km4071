@@ -219,7 +219,7 @@ ggplot(boot_long, aes(x = value)) +
   )
 
 ```
-
+The bootstrap distribution for R^2 appears stable and well-behaved, but the distribution of β1/β2is extremely distorted. This occurs because the precipitation coefficient β2 is very close to zero in many bootstrap samples, causing the ratio β1/β2 to explode to very large positive or negative values. As a result, the histogram is dominated by extreme outliers and collapses visually into a single vertical bar. This indicates that the ratio is not a numerically stable or meaningful summary for these data, even though the bootstrap procedure itself is functioning correctly.
 
 ```{r}
 ci_r_sq =
@@ -245,7 +245,7 @@ ci_table =
 ci_table
 
 ```
-
+The bootstrap confidence interval for R^2 is narrow and well-defined, reflecting a stable relationship between the predictors and maximum temperature. In contrast, the confidence interval for β1/β2 is extremely wide, spanning from roughly –5600 to 4600. This occurs because the precipitation coefficient β2 is frequently very close to zero across bootstrap samples, causing the ratio to become highly unstable and producing extreme values. As a result, the ratio is not a reliable or interpretable summary for these data, even though the bootstrap procedure itself is functioning correctly.
 
 #Problem 3
 ```{r}
