@@ -136,6 +136,7 @@ data("weather_df")
 
 weather_df =
   weather_df |>
+  filter(name == "CentralPark_NY") |>
   drop_na(tmax, tmin, prcp)
 
 base_fit =
